@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 案例 1
+    // 求数字的平方，是三次方
+    function mathPow(pow) {
+      return function (num) {
+        return Math.pow(num, pow)
+      }
+    }
+
+    const mathPow2 = mathPow(2)
+    const mathPow3 = mathPow(3)
+
+    console.log(mathPow2(4))
+    console.log(mathPow2(5))
+    console.log(mathPow3(4))
+
+    // 案例 2
+    // 计算员工工资，员工等级基础工资一样，每个人的绩效都不一样
+    function makeSalary(base) {
+      return function (money) {
+        return base + money
+      }
+    }
+
+    const salaryLevel1 = makeSalary(10000)
+    const salaryLevel2 = makeSalary(12000)
+
+    console.log(salaryLevel1(2000))
+    console.log(salaryLevel1(3000))
+    console.log(salaryLevel2(3000))
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# Promise.resolve 方法的实现
+## 分析
+```js
+function p1() {
+  return new Promise((resolve, reject) => {
+    resolve('p1')
+  })
+}
+
+Promise.resolve(100).then(value => console.log(value)) // 100
+Promise.resolve(p1()).then(value => console.log(value)) // p1
+
+/**
+ * 分析
+ * Promise.resolve 是一个静态方法
+ * Promise.resolve 方法接收参数可以为值或者是 Promise 对象
+ * Promise.resolve 返回一个 Promise 对象
+ * 判断接收值的类型，Promise 对象直接返回；不是的返回新的 Promise 对象，使用 resolve 改变状态
+ */
+const MyPromise = require('./myPromiseBabel')
+
+function p2() {
+  return new MyPromise((resolve, reject) => {
+    resolve('p2')
+  })
+}
+
+MyPromise.resolve(100).then(value => console.log(value)) // 100
+MyPromise.resolve(p2()).then(value => console.log(value)) // p2
+
+```
+
+![](https://dd-ss.oss-cn-guangzhou.aliyuncs.com/20210109184743.png)
+
+## 代码
+```js
+  // Promise.resolve 是静态方法
+  // 接收值的可以是普通值或者是 Promise 对象
+  // 普通值就返回新的 Promise 对象；是 Promise 对象就直接返回
+  static resolve(value) {
+    if (value instanceof MyPromise) return value
+    return new MyPromise((resolve, reject) => resolve(value))
+  }
+```

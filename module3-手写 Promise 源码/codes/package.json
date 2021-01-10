@@ -1,0 +1,27 @@
+{
+  "name": "codes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-Promise 核心逻辑实现.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "yarn webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@webpack-cli/serve": "^1.2.1",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.11.1"
+  }
+}
