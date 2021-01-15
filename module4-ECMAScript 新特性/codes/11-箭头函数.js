@@ -1,0 +1,32 @@
+// before
+function before(n) {
+  return n + 1
+}
+
+// after
+// 接收单个参数，如果不带 {}，就直接 return 结果；带了 {} 需要自己写 return
+const inc = n => n + 1
+
+// 接收多个参数
+const more = (n1, n2) => {
+  console.log(n1)
+  console.log(n2)
+  return n1 + n2
+}
+
+console.log(inc(100)) // 101
+console.log(more(1, 2)) // 3
+
+const arr = [1, 2, 3, 4, 5, 6]
+
+// 以前的写法
+const r1 = arr.filter(function (item, index) {
+  return item % 2
+})
+console.log(r1)
+
+// 箭头函数的写法
+const r2 = arr.filter(item => item % 2)
+console.log(r2)
+
+// 是不是更简洁了呢

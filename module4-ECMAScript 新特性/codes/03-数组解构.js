@@ -1,0 +1,47 @@
+// before 数组获取元素
+const arr = [1, 2, 3]
+
+// const foo = arr[0]
+// const bar = arr[1]
+// const baz = arr[2]
+// console.log(foo, bar, baz)
+
+// after 数组解构的用法
+// 定义的变量值与数组元素为止一一对应
+// const [foo, bar, baz] = arr
+// console.log(foo, bar, baz) // 1 2 3
+
+// 只想获取到某一个位置的数据，其他位置可以为空
+// const [ , , baz] = arr
+// console.log(baz) // 3
+
+// 可以使用省略号将剩余的数据放到一个数组，省略号的形式只能在最后一个位置使用
+// const [foo, ...val] = arr
+// console.log(foo) // 1
+// console.log(val) // [2, 3]
+
+// 可以只获取前几个元素，由 0 开始
+// const [foo] = arr
+// console.log(foo) // 1
+
+// 也可以定义多个变量，只不过超出数组长度的变量的值是 undefined，和 arr[3] 返回的结果一样
+// const [foo, bar, baz, more] = arr
+// console.log(more) // undefined
+
+// 在解构的过程中可以定义初始值
+// const [foo, bar, baz = '111', more = 'default value'] = arr
+// console.log(baz) // 3
+// console.log(more) // default value
+
+// 可以合并数组
+// const arr2 = [4, 5, 6]
+// console.log([...arr, ...arr2]) // [1, 2, 3, 4, 5, 6]
+
+// 可以解构成新的数组
+// const newArr = [...arr]
+// console.log(newArr) // [1, 2, 3]
+// console.log(newArr === arr) // false
+
+// 实际应用 - 获取路径
+const path = '/foo/bar/baz'
+const [, dir] = path.split('/')
