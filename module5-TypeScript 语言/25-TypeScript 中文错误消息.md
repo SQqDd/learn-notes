@@ -1,0 +1,2 @@
+- TypeScript 中文错误消息
+  - npx tsc --locale zh-CN 将错误信息设置成中文

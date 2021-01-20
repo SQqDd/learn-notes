@@ -1,0 +1,16 @@
+{
+  "name": "codes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-弱类型的问题.js",
+  "scripts": {
+    "flow": "flow"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "flow-bin": "^0.142.0"
+  }
+}
