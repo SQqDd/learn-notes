@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 普通方式
+    for (let i = 0; i < 100; i++) {
+      const ele = document.createElement('p')
+      ele.innerText = i
+      document.body.appendChild(ele)
+    }
+
+    // 优化方式
+    const fragEle = document.createDocumentFragment()
+
+    for (let i = 0; i < 100; i++) {
+      const ele = document.createElement('p')
+      ele.innerText = i
+      fragEle.appendChild(ele)
+    }
+
+    document.body.appendChild(fragEle)
+  </script>
+</body>
+</html>

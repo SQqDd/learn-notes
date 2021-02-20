@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">add</button>
+
+  <script>
+    // 闭包陷阱
+    function foo() {
+      const ele = document.getElementById('btn')
+
+      ele.onclick = function () {
+        // 此时产生了闭包，“内部”访问了“外部”的成员
+        console.log(ele.id)
+      }
+    }
+
+    foo()
+
+    // 如何解决？
+    function resolve() {
+      const ele = document.getElementById('btn')
+
+      ele.onclick = function () {
+        console.log(ele.id)
+      }
+
+      ele = null
+      // 为什么要赋值为 null
+      // 其实 ele 是一个 DOM 节点的内存地址引用
+      // 本身 const ele = document.getElementById('btn') 是将他的内存地址
+    }
+  </script>
+</body>
+</html>

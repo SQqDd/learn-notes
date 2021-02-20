@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button id="btn">Add</button>
+
+  <script>
+    var tmpEle
+
+    function fn() {
+      const ul = document.createElement('ul')
+
+      for (let i = 0; i < 10; i++) {
+        ul.appendChild(document.createElement('li'))
+      }
+
+      // 分离 DOM，使用全局变量存储，但不显示在页面上
+      tmpEle = ul
+
+      tmpEle = null
+    }
+
+    document.getElementById('btn').addEventListener('click', fn)
+  </script>
+
+</body>
+</html>

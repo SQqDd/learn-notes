@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <p id="p1">123</p>
+
+  <script>
+    // 传统方式
+    for (let i = 0; i < 10; i++) {
+      const p = document.createElement('p')
+
+      p.innerText = i
+      document.body.appendChild(p)
+    }
+
+    // 克隆方式
+    const old = document.getElementById('p1')
+
+    for (let i = 0; i < 10; i++) {
+      const newEle = old.cloneNode(false)
+
+      newEle.innerText = i
+      document.body.appendChild(newEle)
+    }
+  </script>
+
+</body>
+</html>
